@@ -11,7 +11,7 @@ class RecipeFoodsController < ApplicationController
     if @recipe_food.save
       redirect_to user_recipe_path(@recipe.user, @recipe)
     else
-      flash[:error] = 'Ingredient already added.'
+      flash[:error] = 'Similar ingredient already added.'
     end
   end
 
