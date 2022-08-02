@@ -74,7 +74,7 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "cssbundling-rails"
+gem 'cssbundling-rails'
 
 gem 'devise'
-gem "letter_opener"
+gem 'letter_opener'
