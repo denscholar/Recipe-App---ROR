@@ -1,0 +1,24 @@
+<h2 class="text-center mt-5">This is the food view</h2>
+<div class="d-flex justify-content-end button-container my-3">
+<%= link_to "Add Food", new_food_path, class: "btn btn-primary" %>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Measurement Unit</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @foods.each do |food| %>
+ <tr>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %></td>
+      <td><%= link_to "Delete", food_path(food), data: { turbo_method: :delete } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
