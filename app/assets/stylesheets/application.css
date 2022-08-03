@@ -35,8 +35,13 @@ body {
 .inventory-left {
   padding: 0 20px;
   color: var(--color_nile_blue_medium) !important;
+  width: 100px;
 }
 
 .description {
   padding: 0 20px !important;
+}
+.name{
+  display: flex;
+  width: 100px;
 }
