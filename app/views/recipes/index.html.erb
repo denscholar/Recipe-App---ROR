@@ -1,0 +1,16 @@
+<div class='flex-col'>
+  <div class='recipe_container'>
+    <div class='recipe_header'>
+      <h1>Recipes</h1>
+      <% if @user==current_user %>
+      <button><%= link_to "Add new Recipe", new_user_recipe_path%></button>
+      <% end %>
+    </div> <!-- end recipe_header --> 
+    <div class='recipe_content'>
+      <% @user.recipes.each do |recipe| %>
+        <%= render recipe %>
+      <%end%> <!-- end @user.recipes.each do -->
+    </div>
+  </div>
+</div>
+<!-- end recipe_container -->

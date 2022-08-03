@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     confirmations: 'users/confirmations'
   }
+  root "pages#index"
 
   root "pages#index"
 
