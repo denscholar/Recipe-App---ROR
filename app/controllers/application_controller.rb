@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include ActionController::Helpers
+  attr_reader :current_user
 
   protect_from_forgery with: :exception
   before_action :authenticate_user!

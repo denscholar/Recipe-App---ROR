@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+* {
+  --color_nile_blue_dark: #03363d;
+  --color_nile_blue_medium: #174d4d;
+  --color_pastel_blue_clear: #f8f9f9;
+  --color_pastel_blue_ligth: #d6edf2;
+}
+
+body {
+  background-color: var(--color_pastel_blue_clear) !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.inventory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+.inventory-item {
+  border: 1px solid black;
+  display: flex;
+  margin: 2px;
+  padding: 20px 20px;
+  justify-content: space-between;
+  background-color: var(--color_pastel_blue_ligth) !important;
+}
+
+.inventory-left {
+  padding: 0 20px;
+  color: var(--color_nile_blue_medium) !important;
+  width: 100px;
+}
+
+.description {
+  padding: 0 20px !important;
+}
+
+.name {
+  display: flex;
+  width: 100px;
+}
+
+.new_food {
+  margin-left: auto;
+}

@@ -1,0 +1,11 @@
+<div class="inventory-item">
+    <div class="inventory-left">
+        <h4 class="name"><%= inventory.name %> <%=inventory.id%></h4>
+        <% if can? :destroy, inventory %>
+            <%= link_to 'Remove', inventory_path(inventory.id), data: { turbo_method: :delete } %>
+       <% end %>
+    </div>
+    <div class="inventory-right">
+        <p class="description"><%= inventory.description %> </p>
+    </div>
+</div>

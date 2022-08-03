@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  resources :foods
-  resources :users
   root "pages#index"
+
+  # resources :users, only: %i[index show] do
+    resources :inventories, only: %i[index show new create destroy] do
+      resources :inventory_foods, only: %i[index show new create destroy]
+    end
+    resources :foods, only: %i[index show new create destroy]
+  # end
 end
