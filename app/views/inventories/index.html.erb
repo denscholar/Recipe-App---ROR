@@ -1,0 +1,9 @@
+<div class="inventory-container">
+    <%if (@inventory_items.any?)%>
+        <% @inventory_items.each do |inventory| %>
+            <%= render partial: "shared/inventory_item", locals: { inventory: inventory } %>
+        <% end %>        
+    <% else %>
+        <h5>Inventory records not found!</h5>
+    <% end %>
+</div>
