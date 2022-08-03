@@ -16,9 +16,6 @@
   <%= render "shared/header" %>
   <div class="container">
     <div class="row">
-    <% flash.each do |name, msg| %>
-      <p class="my-2 justify-content-start"><%= msg %></p>
-    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

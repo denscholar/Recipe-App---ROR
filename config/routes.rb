@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   }
   root "pages#index"
 
-  root "pages#index"
-
   # resources :users, only: %i[index show] do
     resources :inventories, only: %i[index show new create destroy] do
       resources :inventory_foods, only: %i[index show new create destroy]
