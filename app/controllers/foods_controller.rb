@@ -1,9 +1,8 @@
 class FoodsController < ApplicationController
-  
   def show
     @food = Food.find(id: params[:id])
   end
-  
+
   def index
     @foods = Food.all
   end
