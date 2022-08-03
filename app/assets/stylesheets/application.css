@@ -41,7 +41,8 @@ body {
 .description {
   padding: 0 20px !important;
 }
-.name{
+
+.name {
   display: flex;
   width: 100px;
 }
