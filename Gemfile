@@ -48,7 +48,11 @@ gem 'bootsnap', require: false
 # gem "json"
 
 # Linters references
-# gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Authorization
+gem 'cancancan'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -77,6 +81,5 @@ end
 
 gem 'cssbundling-rails'
 
-gem 'cancancan'
 gem 'devise'
 gem 'letter_opener'
