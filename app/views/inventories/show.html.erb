@@ -1,5 +1,6 @@
 <div class="inventory-container">
     <h2><%= @inventory.name%> <%= @inventory.id%></h2>
+     <div class="new_food"><%= button_to 'Add food', new_food_path %></div>
     <table class="table table-striped">
     <thead>
         <tr>

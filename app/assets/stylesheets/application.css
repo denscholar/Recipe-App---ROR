@@ -46,3 +46,7 @@ body {
   display: flex;
   width: 100px;
 }
+
+.new_food {
+  margin-left: auto;
+}
