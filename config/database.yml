@@ -18,8 +18,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   port: 5432
-  username: deneliobuaz
-  password: admin
   
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -86,5 +84,3 @@ test:
 production:
   <<: *default
   database: recipe_app__ROR_production
-  username: deneliobuaz
-  password: admin
