@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+user1= User.find(1)
+# user1= User.create(name: 'Elio')
+# user2= User.create(name: 'Denis')
+# User.create(name: 'Boaz')
+inventory1=Inventory.create(user_id: user1.id, name: 'Beef',description: 'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1] Beef is a source of high-quality protein and essential nutrients.[2]' )
+Inventory.create(user_id: user1.id, name: 'Side',description: 'A side dish, sometimes referred to as a side order, side item, or simply a side, is a food item that accompanies the entrée or main course at a meal. Side dishes such as salad, potatoes and bread are commonly used with main courses throughout many countries of the western world. New side orders introduced within the past decade[citation needed], such as rice and couscous, have grown to be quite popular throughout Europe, especially at formal occasions (with couscous appearing more commonly at dinner parties with Middle Eastern dishes).')
+# inventory2= Inventory.create(user_id: user2.id, name: 'Dessert', description: 'Dessert is a course that concludes a meal. The course usually consists of sweet foods, such as confections dishes or fruit, and possibly a beverage such as dessert wine or liqueur, however in the United States it may include coffee, cheeses, nuts, or other savory items regarded as a separate course elsewhere. In some parts of the world, such as much of central and western Africa, and most parts of China, there is no tradition of a dessert course to conclude a meal.\r\n\r\nThe term dessert can apply to many confections, such as biscuits, cakes, cookies, custards, gelatins, ice creams, pastries, pies, puddings, and sweet soups, and tarts. Fruit is also commonly found in dessert courses because of its naturally occurring sweetness. Some cultures sweeten foods that are more commonly savory to create desserts.')
+food1=Food.create(name: 'Beef and Mustard Pie', measurement_unit: 'Kilo', price: 3.75)
+food2=Food.create(name: 'Beef and Oyster pie', measurement_unit: 'Kilo', price: 3.5)
+InventoryFood.create(quantity: 3,inventory_id:inventory1.id ,food_id: food1.id)
+InventoryFood.create(quantity: 8,inventory_id:inventory1.id ,food_id: food2.id)
+
+food3=Food.create(name: 'Brie wrapped in prosciutto & brioche', measurement_unit: 'unit', price: 9)
+food4=Food.create(name: 'Corba', measurement_unit: 'unit', price: 1.45)
+# InventoryFood.create(quantity: 20,inventory_id:inventory2.id ,food_id: food3.id)
+# InventoryFood.create(quantity: 10,inventory_id:inventory2.id ,food_id: food4.id)

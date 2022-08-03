@@ -4,9 +4,13 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "pages#index"
+
+  # resources :users, only: %i[index show] do
+    resources :inventories, only: %i[index show new create destroy] do
+      resources :inventory_foods, only: %i[index show new create destroy] do 
+        resources :foods, only: %i[index show new create destroy]
+      end
+    end
+  # end
 end
