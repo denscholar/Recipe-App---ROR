@@ -77,5 +77,6 @@ end
 
 gem 'cssbundling-rails'
 
+gem 'cancancan'
 gem 'devise'
 gem 'letter_opener'

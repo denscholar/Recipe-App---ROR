@@ -1,4 +1,4 @@
-class RecipeController < ApplicationController
+class RecipesController < ApplicationController
   def index
     @user = User.includes(:recipes).find(params[:user_id])
   end
@@ -27,6 +27,12 @@ class RecipeController < ApplicationController
         format.html { redirect_to new_user_recipe_path(@recipe.user), alert: 'Recipe could not be created.' }
       end
     end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_recipes_path(@recipe.user), notice: 'Recipe was successfully deleted.'
   end
 
   private
