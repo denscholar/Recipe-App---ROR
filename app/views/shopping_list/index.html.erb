@@ -1,0 +1,25 @@
+<div class="w-3/5">
+<div class="flex justify-center mt-4">
+	<h2 class='text-xl font-bold'>Shopping List</h2>
+</div>
+	<div class="grid gap-2 grid-cols-2 mt-4">
+  	<p>Amount of food items to buy: <%= @total_items %> Unit</p>
+  	<p>Total value of food nested: <%= @total_value %>$</p>
+	</div>
+<div class="flex justify-center mt-4">	
+	<table class="w-4/5 border">
+		<tr class="boder">
+			<th class="font-bold">Food</th>
+    	<th class="font-bold">Quantity</th>
+    	<th class="font-bold">Price</th>
+  	</tr>
+  	<%@recipe_foods.each do |item|%>
+  	<tr class="border odd:bg-white even:bg-slate-50">
+    	<td class="text-center"><%=item.food.name%></td>
+    	<td class="text-center"><%=item.quantity%> <%= item.food.measurement_unit%></td>
+    	<td class="text-center"><%=item.food.price * item.quantity%>$</td>
+  	</tr>
+  	<%end%>
+	</table>
+</div>
+</div>

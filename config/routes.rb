@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   root "pages#index"
+  resources :public_recipes, only: [:index]
+  resources :shopping_list, only: [:index]
 
   # resources :users, only: %i[index show] do
     resources :inventories, only: %i[index show new create destroy] do
