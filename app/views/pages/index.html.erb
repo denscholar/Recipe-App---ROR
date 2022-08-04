@@ -1,4 +1,10 @@
 <h2>This is the test home page</h2>
 
-
+<div class="modal-header">
+  <h4 class="modal-title" id="myModalLabel">title</h4>
+</div>
+<div class="modal-body">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quam amet doloribus voluptas nisi, dignissimos blanditiis assumenda repudiandae illum? Perspiciatis.
+</div>
+<%= link_to post.title, show_modal_path(post_id: post.id), remote: true %>
 
