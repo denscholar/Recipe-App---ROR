@@ -1,10 +1,11 @@
 Rails.application.routes.draw do  
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations',
-    confirmations: 'users/confirmations'
-  }
+  devise_for :users 
+  
+  # controllers: {
+  #   sessions: 'users/sessions',
+  #   passwords: 'users/passwords',
+  #   registrations: 'users/registrations'
+  # }
   root "pages#index"
   resources :public_recipes, only: [:index]
   resources :shopping_list, only: [:index]

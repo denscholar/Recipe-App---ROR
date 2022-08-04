@@ -1,8 +1,8 @@
-<div class='recipe_container'>
-  <div>
-    <h3><%= link_to (recipe.name), user_recipe_path(recipe.user_id, recipe.id) %></h3>
+<div class='container border m-2 d-flex'>
+  <div class="p-2">
+    <h4><%= link_to (recipe.name), user_recipe_path(recipe.user_id, recipe.id) %></h4>
 
-    <% if owner?(recipe)%>
+    <% if @user==current_user %>
     <div><%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id),
     method: :delete %></div>
     <% end %>
