@@ -2,7 +2,7 @@
   <div class="p-2">
     <h4><%= link_to (recipe.name), user_recipe_path(recipe.user_id, recipe.id) %></h4>
 
-    <% if @user==current_user %>
+    <% if owner?(recipe) %>
     <div><%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id),
     method: :delete %></div>
     <% end %>

@@ -3,7 +3,7 @@
     <h2>The Users</h2>
     <% @users.each do |user| %>
       <div class='users'>
-        <%= render partial: "users/shared/user", locals: { user: user } %>
+        <%= render user %>
       </div>
     <% end %>
   </div>
