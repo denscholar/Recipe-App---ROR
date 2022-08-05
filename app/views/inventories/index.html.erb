@@ -1,5 +1,6 @@
 <div class="inventory-container">
-    <%if (@inventory_items.any?)%>
+    <div class="new_inventory"><%= button_to 'Add Inventory', new_inventory_path, method: :get %></div>
+   <%if (@inventory_items.any?)%>
         <% @inventory_items.each do |inventory| %>
             <%= render partial: "shared/inventory_item", locals: { inventory: inventory } %>
         <% end %>        
