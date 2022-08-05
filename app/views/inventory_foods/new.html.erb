@@ -1,0 +1,25 @@
+<div class="inventory-food-container">
+  <h2>Add Food to Inventory (<%= @inventory.name%> <%= @inventory.id%>) </h2>
+  <div>
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Quantity</th>
+        <th>Add to inventory</th>
+      </tr>
+      <% @foods.each do |food| %>
+        <%= form_with model:  @inventory_food, url: inventory_inventory_foods_path, html: { method: :post } do |f| %>
+          <tr>
+             <%= hidden_field_tag 'inventory_id', @inventory.id %>
+            <%= hidden_field_tag 'food_id', food.id %>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= f.number_field :quantity %></td>
+            <td><%= f.submit 'Add Item' %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>
