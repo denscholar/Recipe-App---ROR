@@ -1,11 +1,12 @@
-<div class='container border m-2 d-flex'>
-  <div class="p-2">
-    <h4><%= link_to (recipe.name), user_recipe_path(recipe.user_id, recipe.id) %></h4>
+<div class='recipe_container'>
+  <div class="recipe_info">
+    <div class="recipe_details">
+      <h4><%= link_to (recipe.name), recipe_path(recipe.id) %></h4>
 
-    <% if @user==current_user %>
-    <div><%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id),
-    method: :delete %></div>
-    <% end %>
+      <% if can? :destroy, recipe %>
+              <%= link_to 'Remove', recipe_path(recipe.id), data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <p><%= recipe.description%></p>
   </div>
-  <p><%= recipe.description%></p>
 </div>

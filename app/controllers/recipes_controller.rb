@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @user = User.includes(:recipes).find(params[:user_id])
+    @user = User.includes(:recipes).find(current_user.id)
   end
 
   def show
-    @user = User.includes(:recipes).find(params[:user_id])
-    @recipe = @user.recipes.includes(:recipe_foods).find(params[:id])
+    # @user = User.includes(:recipes).find(params[:user_id])
+    @recipe = Recipe.includes(:recipe_foods).find(params[:id])
     @current_user = current_user
   end
 
@@ -15,24 +15,19 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
-    @recipe.user_id = params[:user_id]
-
-    respond_to do |format|
-      if @recipe.save
-        format.html do
-          redirect_to user_recipe_path(@recipe.user, @recipe)
-        end
-      else
-        format.html { redirect_to new_user_recipe_path(@recipe.user), alert: 'Recipe could not be created.' }
-      end
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
+    if @recipe.save
+      redirect_to recipe_path(@recipe.user, @recipe), notice: 'Recipe was successfully created.'
+    else
+      render :new
     end
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to user_recipes_path(@recipe.user), notice: 'Recipe was successfully deleted.'
+    redirect_to recipes_path(@recipe.user), notice: 'Recipe was successfully deleted.'
   end
 
   private
