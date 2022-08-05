@@ -21,6 +21,23 @@ body {
   justify-content: space-between;
 }
 
+.recipe_container {
+  align-items: center;
+  width:60vw;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.recipe_info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border: 0.5px solid lightblue;
+  border-radius: 5px;
+}
+
 .inventory-container {
   display: flex;
   flex-direction: column;
