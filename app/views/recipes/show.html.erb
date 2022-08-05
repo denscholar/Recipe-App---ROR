@@ -21,7 +21,7 @@
       </ul>
       <div class="buttons-container">
         <% if @recipe.user == @current_user%>
-        <button><%= link_to 'Recipe Details', new_recipe_path(user_id: @recipe.user_id, recipe_id: @recipe.id) %></button>
+        <button><%=link_to 'Recipe Details', new_recipe_path(user_id: @recipe.user_id, recipe_id: @recipe.id) %></button>
         <% end %>
         <button><%=link_to "Generate Shopping List", shopping_list_index_path(recipe_id: @recipe.id), data:{turbo_frame: "modal"}, class: "btn btn-primary" %></button>
       </div>
