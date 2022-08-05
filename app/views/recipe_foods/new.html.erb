@@ -9,7 +9,7 @@
         <th>Action</th>
       </tr>
       <% @foods.each do |food| %>
-        <%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path do |f| %>
+        <%= form_with model: @recipe_food, url: recipe_recipe_foods_path do |f| %>
           <tr>
             <%= hidden_field_tag 'food_id', food.id %>
             <td><%= food.name %></td>

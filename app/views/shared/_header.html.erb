@@ -1,29 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-   <%= link_to "Recipe Application", root_path, class: "navbar-brand" %>
-   <% if user_signed_in? %>
-   <%= link_to "Public Recipe", public_recipes_path, class: "navbar-brand" %>
-   <%= link_to "Shopping List", shopping_list_index_path, class: "navbar-brand" %>
-   <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-          <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %></li>
-            <li><%= link_to 'Recipes', user_recipes_path(current_user.id)%></li>
-          <% else %>
-           <li> <%= link_to "Sign In", new_user_session_path, class: 'dropdown-item' %></li>
-          <% end %>
-          </ul>
-        </li>
-      </ul>
     </div>
   </div>
 </nav>

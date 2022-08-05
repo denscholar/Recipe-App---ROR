@@ -1,5 +1,6 @@
 class RecipeFoodsController < ApplicationController
   def new
+    @foods = Food.all
     @recipe_food = RecipeFood.new
     @recipe = Recipe.find(params[:recipe_id])
   end
@@ -9,7 +10,7 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food.recipe = @recipe
     if @recipe_food.save
-      redirect_to user_recipe_path(@recipe.user, @recipe)
+      redirect_to recipe_path(@recipe.user, @recipe)
     else
       flash[:error] = 'Similar ingredient already added.'
     end
@@ -17,7 +18,7 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     RecipeFood.find(params[:id]).destroy
-    redirect_to user_recipe_path(current_user, Recipe.find(params[:recipe_id]))
+    redirect_to recipe_path(current_user, Recipe.find(params[:recipe_id]))
   end
 
   private
