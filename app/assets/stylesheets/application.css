@@ -38,11 +38,14 @@ body {
   border-radius: 5px;
 }
 
-.inventory-container {
+.shop-resume,
+.new-inventory-container,
+.inventory-food-container .inventory-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+
+  /* border: 1px solid black; */
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
@@ -58,7 +61,6 @@ body {
 }
 
 .inventory-left {
-  /* padding: 0 20px; */
   color: var(--color_nile_blue_medium) !important;
   width: 25%;
 }
@@ -76,6 +78,7 @@ body {
   width: auto;
 }
 
+.new_inventory,
 .new_food {
   margin-left: auto;
   margin-right: 30px;
@@ -94,9 +97,9 @@ body {
   overflow: auto;
 }
 
-.show-modal {
+/* .show-modal {
   background-color: var(--color_nile_blue_medium);
-}
+} */
 
 .shopping-list-btn {
   margin-left: auto;
