@@ -1,4 +1,7 @@
-<div class="container">
+<div class="modal">
+  <%= turbo_frame_tag :modal %>
+</div>
+<div class=" container col-12 p-2">
   <h2 class="recipe_title"> <%= @recipe.name%></h2>
   <div class="show_recipe">
     <section class="first_section">
@@ -16,9 +19,12 @@
           <li class="private">Private</li>
         <% end %>
       </ul>
-      <% if @recipe.user == @current_user%>
-      <button class="mt-10"><%= link_to 'Add Ingredient', new_recipe_recipe_food_path(user_id: @recipe.user_id, recipe_id: @recipe.id) %></button>
-      <% end %>
+      <div class="buttons-container">
+        <% if @recipe.user == @current_user%>
+        <button><%= link_to 'Recipe Details', new_user_recipe_path(user_id: @recipe.user_id, recipe_id: @recipe.id) %></button>
+        <% end %>
+        <%=button_to link_to "Generate Shopping List", shopping_lists_path(recipe_id: @recipe.id), data:{turbo_frame: "modal"}, class: "btn btn-primary" %>
+      </div>
     </section>
   </div>
   <table class="table_container">

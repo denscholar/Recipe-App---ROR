@@ -2,3 +2,11 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+
+// const modalBtn = document.querySelector('.shopping-list-btn');
+const modalBtn = document.querySelectorAll('button[type="submit"]')[0];
+const modal = document.querySelector('.modal');
+
+modalBtn.addEventListener('click', (e) => {
+    modal.classList.toggle('show-modal');
+});
