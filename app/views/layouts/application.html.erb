@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= javascript_importmap_tags %>
- <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
-
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
   </head>
 
   <body>
-  <%= render "shared/header" %>
-  <div class="container">
-    <div class="row">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render "shared/header" %>
+    <div class="container">
+      <div class="row">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+        <% turbo_frame_tag "modal show-modal" %>
+        </div>
+      </div>
     </div>
-  </div>
   </body>
 </html>
