@@ -17,8 +17,12 @@ body {
   display: flex;
   width: 30%;
   list-style-type: none;
-  text-decoration: none;
+  font-size: 1.5rem;
   justify-content: space-between;
+}
+
+.navigation > ul {
+  text-decoration: none;
 }
 
 .recipe_container {
@@ -32,10 +36,14 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
   border: 0.5px solid lightblue;
   border-radius: 5px;
+}
+
+.recipe_details {
+  margin-right: 30px;
 }
 
 .inventory-container {
