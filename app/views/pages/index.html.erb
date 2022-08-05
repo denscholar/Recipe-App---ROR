@@ -1,7 +1,13 @@
-<h2>Welcome! Enjoy our Recipe Application</h2>
-
-<div>
-  <ul class="login-bar">
+<div class="d-flex justify-content-between">
+  <nav class="navbar navbar-expand-lg">
+    <ul class="navigation justify-content-between list-unstyled">
+      <li class="nav-li"> <%= link_to "Food", foods_path, class: "link" %></li>
+      <li class="nav-li"> <%= link_to "Recipes", recipes_path, class: "link"%></li>
+      <li class="nav-li"> <%= link_to "Inventory", inventories_path, class: "link link-invent"%></li>
+      <li class="nav-li"> <%= link_to "Public", public_recipes_path, class: "link link-invent"%></li>
+    </ul>
+  </nav>
+  <ul class="login-bar list-unstyled">
     <% if user_signed_in? %>
       <li>
         <%= button_to "Sign Out", destroy_user_session_path, class: "sign-btn", method: :delete %>
@@ -15,11 +21,5 @@
   </ul>
 </div>
 
-<nav>
-  <ul class="navigation">
-    <li class="nav-li"> <%= link_to "Food", foods_path, class: "link" %></li>
-    <li class="nav-li"> <%= link_to "Recipes", recipes_path, class: "link"%></li>
-    <li class="nav-li"> <%= link_to "Inventory", inventories_path, class: "link link-invent"%></li>
-    <li class="nav-li"> <%= link_to "Public", public_recipes_path, class: "link link-invent"%></li>
-  </ul>
-</nav>
+<h2>Welcome! Enjoy our Recipe Application</h2>
+

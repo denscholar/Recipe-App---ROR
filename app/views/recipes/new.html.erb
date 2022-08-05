@@ -1,22 +1,20 @@
+<%= link_to "Back", root_path, class: "home-btn" %>
+
 <div class="index flex-col">
   <h1>Add New Recipe</h1>
-  <div>
+  <div class="container p-2">
     <%= form_with(scope: :recipes, url: recipes_path, method: :post, local: true) do |f| %>
-      <div>
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
+      <div class="form-input">
+        <%= f.text_field :name, placeholder: "Name", rows: "8", required: true %><br />
       </div>
-      <div>
-        <%= f.label :description %><br />
-        <%= f.text_field :description %>
+      <div class="form-input">
+        <%= f.text_field :description, placeholder: "Description", rows: "8", required: true %><br />
       </div>
-      <div>
-        <%= f.label :preparation_time %><br />
-        <%= f.number_field :preparation_time %>
+      <div class="form-input">
+        <%= f.number_field :preparation_time, placeholder: "Preparation Time", rows: "8", required: true %><br />
       </div>
-      <div>
-        <%= f.label :cooking_time %><br />
-        <%= f.number_field :cooking_time %>
+      <div class="form-input">
+        <%= f.number_field :cooking_time, placeholder: "Cooking Time", rows: "8", required: true %><br />
       </div>
       <div>
         <%= f.label :public %><br />

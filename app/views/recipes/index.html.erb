@@ -1,7 +1,7 @@
 <div class='flex-col'>
   <div class='recipe_container'>
-    <div class='recipe_header'>
-      <h1>Recipes</h1>
+    <div class='d-flex p-2 justify-content-between recipe_header'>
+      <h1>Recipes List</h1>
       <% if @user==current_user %>
       <button><%= link_to "Add Recipe", new_recipe_path%></button>
       <% end %>
