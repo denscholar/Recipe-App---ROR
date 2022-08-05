@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   #   registrations: 'users/registrations'
   # }
   root "pages#index"
+  resources :public_recipes, only: [:index]
+  resources :shopping_list, only: [:index]
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Defines the root path route ("/")
-  resources :users, only: [:index, :show] do
-    resources :recipes, only: [:index, :show, :new, :create]
-      resources :recipe_foods, only: [:new, :create, :destroy]
-  end
+  # resources :users, only: %i[index show] do
+    resources :inventories, only: %i[index show new create destroy] do
+      resources :inventory_foods, only: %i[index show new create destroy]
+    end
+    resources :foods, only: %i[index show new create destroy]
+  # end
 end
