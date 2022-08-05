@@ -17,14 +17,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  port: 5432
-<<<<<<< HEAD
-=======
+  # port: 5432
   username: deneliobuaz
   password: admin
   # username: postgres
   # password: e2n0c0m2p
->>>>>>> 1efd1ce17cd4a7233cdcb677c0a3395b72458344
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -33,6 +30,8 @@ default: &default
 development:
   <<: *default
   database: recipe_app__ROR_development
+  username: deneliobuaz
+  password: admin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -91,3 +90,5 @@ test:
 production:
   <<: *default
   database: recipe_app__ROR_production
+  username: deneliobuaz
+  password: admin
