@@ -1,0 +1,31 @@
+<div class="shop-resume">
+    <h2>Shopping List</h2>
+    <div class="resume-row">
+        <div>Amount of food to buy: <%= @total_food %></div>
+        <div>Recipe: <%= link_to "#{@recipe.name} #{@recipe.id}", user_recipe_path(@inventory.user_id, @recipe.id) %></div>
+    </div>
+    <div class="resume-row">
+        <div>Total value of food needed: $<%= @total_price %></div>
+        <div>Inventory: <%= link_to "#{@inventory.name} #{@inventory.id}", inventory_path(@inventory.id) %></div>
+    </div>
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Food</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @required_food.each do |rf|%>
+                    <tr>
+                        <td><%= rf[:name] %></td>
+                        <td><%= rf[:quantity] %></td>
+                        <td>$<%= rf[:price] %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
