@@ -4,8 +4,8 @@ RSpec.describe 'Food view', type: :feature do
   describe 'Food index page' do
     before(:each) do
       @user = User.create!(name: 'Dennis Alice', email: 'denscholar2020@gmail.com', password: 'password',
-                           confirmed_at: Time.now)
-      @food = Food.create!(user_id: @user.id, name: 'Ground beef', measurement_unit: 'kg', price: 12)
+                           confirmed_at: Time.now, password_confirmation: 'password')
+      @food = Food.create!(name: 'Ground beef', measurement_unit: 'kg', price: 12)
 
       visit 'users/sign_in'
       fill_in 'Email', with: 'denscholar2020@gmail.com'
@@ -14,17 +14,17 @@ RSpec.describe 'Food view', type: :feature do
     end
 
     scenario 'validates if Food is displayed on foods page' do
-      visit "users/#{@user.id}/foods"
+      visit "foods"
       expect(page).to have_content('Foods')
     end
 
     scenario 'user can create new food using button' do
-      visit "users/#{@user.id}/foods"
+      visit "foods"
       expect(page).to have_content('New food')
     end
 
     scenario 'New Food button redirects to New Food form' do
-      visit "users/#{@user.id}/foods"
+      visit "foods"
       click_link 'New food'
       sleep 1.5
       expect(page).to have_content('Price')
@@ -35,13 +35,13 @@ RSpec.describe 'Food view', type: :feature do
     before(:each) do
       @user = User.create!(name: 'Esther Alice', email: 'estherAlice@gmail.com', password: 'password',
                            confirmed_at: Time.now)
-      @food = Food.create!(user_id: @user.id, name: 'Ground beef', measurement_unit: 'kg', price: 12)
+      @food = Food.create!(name: 'Ground beef', measurement_unit: 'kg', price: 12)
 
       visit 'users/sign_in'
       fill_in 'Email', with: 'estherAlice@gmail.com'
       fill_in 'Password', with: 'password'
       click_button 'Log in'
-      visit "users/#{@user.id}/foods/new"
+      visit "foods/new"
     end
 
     scenario 'form has correct fields' do

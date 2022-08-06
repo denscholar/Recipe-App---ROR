@@ -4,7 +4,12 @@ RSpec.describe 'Inventory Show page', type: :system do
   before(:all) do
     user1 = User.find(1)
     @inventory1 = Inventory.create(user_id: user1.id, name: 'Vegetables',
-                                   description: 'vegetable, in the broadest sense, any kind of plant life or plant product, namely “vegetable matter”; in common, narrow usage, the term vegetable usually refers to the fresh edible portions of certain herbaceous plants—roots, stems, leaves, flowers, fruit, or seeds. These plant parts are either eaten fresh or prepared in a number of ways, usually as a savory, rather than sweet, dish.')
+                                   description: 'vegetable, in the broadest sense, any kind of plant life or plant
+                                        product, namely “vegetable matter”; in common, narrow usage, the term vegetable
+                                        usually refers to the fresh edible portions of certain herbaceous plants—roots,
+                                        stems, leaves, flowers, fruit, or seeds. These plant parts are either eaten
+                                        fresh
+                                        or prepared in a number of ways, usually as a savory, rather than sweet, dish.')
     @food1 = Food.create(name: 'Potatoes', measurement_unit: 'Unit', price: 3)
     @inventory_food = InventoryFood.create(quantity: 3, inventory_id: @inventory1.id, food_id: @food1.id)
   end
