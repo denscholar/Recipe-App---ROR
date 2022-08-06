@@ -17,9 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # port: 5432
-  username: deneliobuaz
-  password: admin
+  port: 5432
+  # username: deneliobuaz
+  # password: admin
   # username: postgres
   # password: e2n0c0m2p
 
@@ -30,8 +30,8 @@ default: &default
 development:
   <<: *default
   database: recipe_app__ROR_development
-  username: deneliobuaz
-  password: admin
+  # username: deneliobuaz
+  # password: admin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -90,5 +90,5 @@ test:
 production:
   <<: *default
   database: recipe_app__ROR_production
-  username: deneliobuaz
-  password: admin
+  # username: deneliobuaz
+  # password: admin

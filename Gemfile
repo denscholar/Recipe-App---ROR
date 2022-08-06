@@ -74,9 +74,12 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'byebug', platform: :mri
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 gem 'cssbundling-rails'
