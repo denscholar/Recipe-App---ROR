@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name : Recipe App
+# Project Name : Recipe-App
 
 > The Recipe app is a classic example of a Recipe website. this website shows the list of food-list, recipe, inventory and the public recipes. Users can add food and also recipes and view them if they are made public or private. 
 
