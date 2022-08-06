@@ -1,0 +1,27 @@
+<div class="col-lg-6 mx-lg-auto">
+  <div class="card shadow">
+    <div class="card-header">
+        <h4 class="card-title text-center">Add Food here</h4>
+    </div>
+    <div class="card-body">
+    <%= form_with(model: @food, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Food", autofocus: true, class: 'form-control mt-4' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :measurement_unit, autofocus: true, placeholder: "measurement_unit", class: 'form-control mt-3' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.number_field :price, autofocus: true, placeholder: "Price", autocomplete: "email", class: 'form-control mt-3' %>
+  </div>
+
+  <div class="form-group mt-3 d-flex justify-content-between">
+    <%= f.submit "Add Food", class: "btn btn-primary btn-lg" %>
+  <%= link_to "Back to food list", foods_path %>
+  </div>
+<% end %>
+
+    </div>
+  </div>
+</div>
