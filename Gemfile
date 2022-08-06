@@ -88,6 +88,6 @@ gem 'cssbundling-rails'
 
 gem 'devise'
 gem 'letter_opener'
-gem "rspec"
 gem 'rails-controller-testing'
+gem 'rspec'
 gem 'rspec-rails'
