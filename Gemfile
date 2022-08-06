@@ -83,5 +83,5 @@ gem 'cssbundling-rails'
 gem 'devise'
 gem 'letter_opener'
 gem 'rspec-rails', '~> 5.0.0'
-gem 'ffi', '~> 1.15.5'
 
+gem 'ffi', '~> 1.15.5'
