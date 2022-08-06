@@ -126,11 +126,12 @@ body {
   width: 50%;
   height: 50%;
   overflow: auto;
+  background-color: var(--color_nile_blue_medium);
 }
 
-/* .show-modal {
+.show-modal {
   background-color: var(--color_nile_blue_medium);
-} */
+} 
 
 .shopping-list-btn {
   margin-left: auto;
