@@ -73,19 +73,16 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'byebug', platform: :mri
   gem 'capybara'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 5.0.0'
   gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
-gem 'bullet'
+gem 'bullet', '~> 7.0'
 
 gem 'cssbundling-rails'
 
 gem 'devise'
 gem 'letter_opener'
+
+gem 'rspec-rails', '~> 5.0.0'

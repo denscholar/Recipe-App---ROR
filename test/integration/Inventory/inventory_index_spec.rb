@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'Inventory Index page', type: :system do
   before(:all) do
-    user1 = User.find(1)
-    @inventory1 = Inventory.create(user_id: user1.id, name: 'Vegetables',
-                                   description: 'vegetable, in the broadest sense, any kind of plant life or plant product, namely “vegetable matter”; in common, narrow usage, the term vegetable usually refers to the fresh edible portions of certain herbaceous plants—roots, stems, leaves, flowers, fruit, or seeds. These plant parts are either eaten fresh or prepared in a number of ways, usually as a savory, rather than sweet, dish.')
+    user = User.create(email: 'user@mail.com', password: '123456')
+    user.save
+    @inventory1 = Inventory.create(user_id: user.id, name: 'Vegetables',
+                                   description: 'vegetable, in the broadest sense, any kind of plant life or plant
+                                   product, namely “vegetable matter”; in common, narrow usage, the term vegetable
+                                   usually refers to the fresh edible portions of certain herbaceous plants—roots,
+                                   stems, leaves, flowers, fruit, or seeds. These plant parts are either eaten fresh
+                                   or prepared in a number of ways, usually as a savory, rather than sweet, dish.')
   end
 
   it 'I can see the inventory id.' do
