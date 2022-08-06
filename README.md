@@ -1,105 +1,74 @@
-## setting up rails app with postgress
-rails new recipe-app--ROR --database=postgresql
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-CREATE USER deneliobuaz WITH PASSWORD 'admin';
-ALTER USER deneliobuaz CREATEDB;
+# Project Name : Recipe App
 
+> The Recipe app is a classic example of a Recipe website. this website shows the list of food-list, recipe, inventory and the public recipes. Users can add food and also recipes and view them if they are made public or private. 
 
+## Built With
 
-<!-- class FoodsController < ApplicationController
-  def show
-    @food = Food.find(id: params[:id])
-  end
+- Ruby on Rails
 
-  def index
-    @foods = Food.all
-  end
+## Getting Started
 
-  def new
-    @food = Food.new
-  end
+To get a local copy up and running follow these simple example steps.
+- Clone Repository using
+`git clone https://github.com/denscholar/Recipe-App---ROR/`
+- Move into project directory
+`cd Recipe-App---ROR`
+### Setup Database 
+- Make sure that your Postgres database is installed.
+-  Open the file config\database.yml
+- Modify the connection parameters to point your Postgres      Database:
+    `username: [your_user]`
+    `password: [your_password]`
 
-  def create
-    @food = Food.new(food_params)
-    if @food.save
-      flash[:success] = 'Food created succesfully'
-      redirect_to foods_path
-    else
-      render 'new'
-    end
-  end
+- If required drop existing database : `rake db:drop`
+- Create databases: `rake db:create`
+- Create db structure including tables : `rake db:migrate`
+- If required seed initial data (stored in db\seeds.rb file): `rails db:seed`
+### Run Tests
+- Install rspec: `bundle install`
+- Run all tests: `rspec`
+- Run all tests and show test documentation: `rspec spec --format documentation`
 
-  def destroy
-    @food = Food.find(params[:id])
-    @food.destroy
-    flash[:notice] = 'Food deleted successfully'
-    redirect_to foods_path
-  end
+### Run App
+- If required (Not for testing) run `rails server`
+- Visit http://localhost:3000/ in your browser!
 
-  private
+## 🤝 Contributors
 
-  def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
-  end
-end -->
+👤 **Elio Cortés**
 
-
-<!-- index -->
-
-<h2 class="text-center mt-5">This is the food view</h2>
-<div class="d-flex justify-content-end button-container my-3">
-<%= link_to "Add Food", new_food_path, class: "btn btn-primary" %>
-</div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Food</th>
-      <th scope="col">Measurement Unit</th>
-      <th scope="col">Unit Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @foods.each do |food| %>
- <tr>
-      <td><%= food.name %></td>
-      <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
-      <td><%= link_to "Delete", food_path(food), data: { turbo_method: :delete } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+- GitHub: [@NeckerFree](https://github.com/NeckerFree)
+- Twitter: [@ElioCortesM](https://twitter.com/ElioCortesM)
+- LinkedIn: [elionelsoncortes](https://www.linkedin.com/in/elionelsoncortes/)
 
 
-<!-- new -->
+👤 **Boaz Aduda**
+
+- GitHub: [@Aduda-Boaz](https://github.com/Aduda-Boaz)
+- Twitter: [@BoazAduda](https://twitter.com/BoazAduda)
+- LinkedIn: [Boaz Aduda](https://www.linkedin.com/in/boaz-aduda/)
 
 
-<div class="col-lg-6 mx-lg-auto">
-  <div class="card shadow">
-    <div class="card-header">
-        <h4 class="card-title text-center">Add Food here</h4>
-    </div>
-    <div class="card-body">
-    <%= form_with(model: @food, local: true) do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name, placeholder: "Food", autofocus: true, class: 'form-control mt-4' %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :measurement_unit, autofocus: true, placeholder: "measurement_unit", class: 'form-control mt-3' %>
-  </div>
+👤 **Dennis Akagha**
 
-  <div class="form-group">
-    <%= f.number_field :price, autofocus: true, placeholder: "Price", autocomplete: "email", class: 'form-control mt-3' %>
-  </div>
-
-  <div class="form-group mt-3 d-flex justify-content-between">
-    <%= f.submit "Add Food", class: "btn btn-primary btn-lg" %>
-  <%= link_to "Back to food list", foods_path %>
-  </div>
-<% end %>
+- GitHub: [@denscholar](https://github.com/denscholar)
+- Twitter: [@dennisakagha](https://twitter.com/dennisakagha)
+- LinkedIn: [Boaz Aduda](https://www.linkedin.com/in/denscholar/)
 
 
-    </div>
-  </div>
-</div>
+Feel free to check the [issues page](https://github.com/denscholar/Recipe-App---ROR/issues
+).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse team for guidance
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
