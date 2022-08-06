@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+# ruby '3.1.2'
 ruby '3.1.1'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -78,7 +78,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'rspec-rails', '~> 3.5'
+  # gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
 end
 
@@ -88,3 +88,6 @@ gem 'cssbundling-rails'
 
 gem 'devise'
 gem 'letter_opener'
+gem "rspec"
+gem 'rails-controller-testing'
+gem 'rspec-rails'
