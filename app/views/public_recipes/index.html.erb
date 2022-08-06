@@ -11,9 +11,9 @@
     </div>
 
     <div>
-      <p>Total food items: <%=  @public_recipe.food_arr(recipe.id).count %></p>
+     <p>Total food items: <%=  @public_recipe.food_arr(recipe.id).count %></p>
       <p>Total price: 
-        <%=  @public_recipe.(@public_recipe.(recipe.id), recipe.id ) %>$
+        <%=  @public_recipe.total_food_price(@public_recipe.food_arr(recipe.id), recipe.id ) %>$
       </p>
     </div>  
 </div>

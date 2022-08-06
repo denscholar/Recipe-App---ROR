@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :recipe_foods, foreign_key: :recipe_id, dependent: :destroy
-  
+
   def food_arr(recipe)
     food_arr = []
     recipe_foods = RecipeFood.where(recipe_id: recipe)
@@ -24,5 +24,4 @@ class Recipe < ApplicationRecord
     end
     total
   end
-
 end
