@@ -21,8 +21,6 @@ class UsersController < ApplicationController
     @user = User.includes(:recipes).find(params[:id])
   end
 
-
-
   private
 
   def user_params
