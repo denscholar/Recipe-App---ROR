@@ -78,7 +78,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  # gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 5.0.0'
   gem 'selenium-webdriver'
 end
 
@@ -90,4 +91,3 @@ gem 'devise'
 gem 'letter_opener'
 gem 'rails-controller-testing'
 gem 'rspec'
-gem 'rspec-rails'
