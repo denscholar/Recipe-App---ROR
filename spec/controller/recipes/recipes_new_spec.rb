@@ -20,9 +20,12 @@ RSpec.describe 'Recipe', type: :system do
     expect(current_path).to eql("/users/#{@user.id}/recipes/new")
   end
 
+  it 'has a form to add a recipe' do
+    expect(page).to have_content('Recipe')
+  end
+
   it 'Can add recipes' do
-    sleep(2)
-    click_link 'Add Recipe'
+    click_on 'Add Recipe'
     expect(current_path).to eql("/users/#{@user.id}/recipes")
   end
 end

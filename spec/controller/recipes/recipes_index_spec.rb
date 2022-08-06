@@ -1,29 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipe Index page', type: :system do
-  before(:all) do
+  before :each do
     @user = User.new(email: 'thomas@mail.com', password: '121212', password_confirmation: '121212')
-    @user.save!
-    @recipe = Recipe.create(name: 'Recipe Name', preparation_time: 1, cooking_time: 1,
-                            description: 'Recipe Description', user_id: @user.id, public: true)
+
+    visit root_path
+    visit new_user_session_path
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    click_button 'Log in'
   end
-  it 'I can see the recipe id.' do
-    visit ' /recipes'
-    expect(page).to have_content(@recipe.id)
+  it 'renders recipe index page' do
+    click_link 'Recipes'
+    expect(current_path).to eq('/users/1/recipes')
   end
 
-  it 'I can see the recipes name.' do
-    visit '/recipes'
-    expect(page).to have_content(@recipe.name)
+  it 'Displays recipe list' do
+    click_link 'Recipes'
+    expect(page).to have_content('Recipe1')
   end
 
-  it 'I can see the description' do
-    visit '/recipes'
-    expect(page).to have_content('Recipe Description')
-  end
-
-  it 'I can see remove button' do
-    visit '/recipes'
-    expect(page).to have_content('Remove')
+  it 'can add new recipe' do
+    click_link 'Recipes'
+    expect(page).to have_content('Add Recipe')
   end
 end
