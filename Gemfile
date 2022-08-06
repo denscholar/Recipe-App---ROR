@@ -82,6 +82,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+gem 'bullet'
+
 gem 'cssbundling-rails'
 
 gem 'devise'
