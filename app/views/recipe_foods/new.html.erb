@@ -8,7 +8,7 @@
         <th>Quantity</th>
         <th>Action</th>
       </tr>
-      <% @foods.each do |food| %>
+      <% @foods.each do |food| %>               
         <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, html: { method: :post } do |f| %>
           <tr>
             <%= hidden_field_tag 'food_id', food.id %>
