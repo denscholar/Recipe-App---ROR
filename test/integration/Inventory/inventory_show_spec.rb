@@ -2,8 +2,17 @@ require 'rails_helper'
 
 RSpec.describe 'Inventory Show page', type: :system do
   before(:all) do
-    user1 = User.find(1)
-    @inventory1 = Inventory.create(user_id: user1.id, name: 'Vegetables',
+    @user = User.create!(name: 'Esther Alice', email: 'estherAlice@gmail.com', password: 'password',
+                         confirmed_at: Time.now)
+    @user.save!
+    visit 'users/sign_in'
+    visit new_user_session_path
+    fill_in 'Email', with: @user.email
+    sleep(1)
+    fill_in 'Password', with: @user.password
+    sleep(1)
+    click_button 'Log in'
+    @inventory1 = Inventory.create(user_id: @user.id, name: 'Vegetables',
                                    description: 'vegetable, in the broadest sense, any kind of plant life or plant
                                         product, namely “vegetable matter”; in common, narrow usage, the term vegetable
                                         usually refers to the fresh edible portions of certain herbaceous plants—roots,
