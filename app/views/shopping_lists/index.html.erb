@@ -1,12 +1,13 @@
 <%= turbo_frame_tag :modal do %>
 <div class="container-close-button">
-    <%= button_to "close", class: 'shopping-list-btn'%>
+    <%= button_to "close", class: 'shopping-list-btn' %>
  </div>
   <h3>Generating shopping list</h3>
-  <%= form_with url: shopindex_path(1, 1), local: true, method: :get, data: { turbo: false } do |f| %>
-        <div class="form-group">
-            <%= f.label "Choose an inventory to use" %><br />
-            <%= f.select :inventory_id, @inventories.map { |t| [t.name, t.id]}%>
+  <%= form_with url: shopnew_url(1, @recipe.id), local: true, method: :get do |f| %>
+         <div class="form-group">
+          <%= hidden_field_tag 'recipe_id', @recipe.id %>
+          <%= f.label "Choose an inventory to use" %><br />
+          <%= f.select :inventory_id, @inventories.map { |t| [t.name, t.id]}%>
         </div>
          <%= f.submit "Generate", class: 'button' %>
   <% end %>

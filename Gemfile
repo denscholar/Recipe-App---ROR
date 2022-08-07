@@ -73,13 +73,15 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 
+gem 'bullet', '~> 7.0'
 gem 'cssbundling-rails'
-
 gem 'devise'
 gem 'letter_opener'
+gem 'rspec-rails', '~> 5.0.0'
+
+gem 'ffi', '~> 1.15.5'

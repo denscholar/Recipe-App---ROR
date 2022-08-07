@@ -1,11 +1,11 @@
-<div class="modal">
+<%# <div class="modal">
   <%= turbo_frame_tag :modal %>
-</div>
+<%# </div>   %>
 <div class=" container col-12 p-2">
   <h2 class="recipe_title"> <%= @recipe.name%></h2>
   <div class="show_recipe">
     <section class="first_section">
-      <ul class="list-unstyled col-8 p-4">
+     <ul class="list-unstyled col-8 p-4">
         <li>preparation time: <%= @recipe.preparation_time%> hrs</li>
         <li>Cooking time: <%= @recipe.cooking_time%> hrs</li>
         <li><%= @recipe.description%></li>
@@ -21,9 +21,9 @@
       </ul>
       <div class="buttons-container">
         <% if @recipe.user == @current_user%>
-        <button><%=link_to 'Recipe Details', new_recipe_path(user_id: @recipe.user_id, recipe_id: @recipe.id) %></button>
+        <%=button_to 'Recipe Details', new_recipe_recipe_food_path(recipe_id: @recipe.id), method: :get %>
         <% end %>
-        <button><%=link_to "Generate Shopping List", shopping_list_index_path(recipe_id: @recipe.id), data:{turbo_frame: "modal"}, class: "btn btn-primary" %></button>
+        <%=button_to "Generate Shopping List", shopping_lists_path(recipe_id: @recipe.id), method: :get %>
       </div>
     </section>
   </div>
@@ -42,7 +42,7 @@
         <td>
           <% if @recipe.user == @current_user %>
             <%= button_to 'Delete', recipe_food_path(user_id: @recipe.user_id, recipe_id: @recipe.id, recipe_food_id: recipe_food.id), method: :delete%>
-          <% end %>
+            <% end %>
         </td>
       </tr>
     <% end %>

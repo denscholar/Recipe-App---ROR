@@ -20,4 +20,10 @@ class UsersController < ApplicationController
   def show
     @user = User.includes(:recipes).find(params[:id])
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password)
+  end
 end
